@@ -1,7 +1,7 @@
 using Gridify;
 
-using MoviesApi.SharedKernel.Pagination;
+using MoviesApi.SharedKernel;
 
-namespace MoviesApi.Core.MoviesAggregate.Queries.ListMovies;
+namespace MoviesApi.UseCases.Movies.List;
 
 public class ListMoviesQuery : GridifyQuery, IQuery<ListMoviesResult>;

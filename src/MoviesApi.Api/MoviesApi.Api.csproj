@@ -8,21 +8,25 @@
 
     <ItemGroup>
         <ProjectReference Include="..\MoviesApi.Core\MoviesApi.Core.csproj"/>
-        <ProjectReference Include="..\MoviesApi.Infrastructure\MoviesApi.Infrastructure.csproj" />
+        <ProjectReference Include="..\MoviesApi.Infrastructure\MoviesApi.Infrastructure.csproj"/>
         <ProjectReference Include="..\MoviesApi.ServiceDefaults\MoviesApi.ServiceDefaults.csproj"/>
+        <ProjectReference Include="..\MoviesApi.UseCases\MoviesApi.UseCases.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" />
         <PackageReference Include="FastEndpoints"/>
+        <PackageReference Include="FastEndpoints.Swagger"/>
         <PackageReference Include="JetBrains.Annotations"/>
         <PackageReference Include="MediatR"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Scalar.AspNetCore"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="MoviesApi.Tests"/>
     </ItemGroup>
 
 </Project>

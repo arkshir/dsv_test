@@ -1,6 +1,7 @@
-namespace MoviesApi.Core;
+global using Microsoft.Extensions.Logging;
 
-public class GlobalUsings
-{
-    
-}
+global using MediatR;
+
+global using Vogen;
+
+global using MoviesApi.SharedKernel;

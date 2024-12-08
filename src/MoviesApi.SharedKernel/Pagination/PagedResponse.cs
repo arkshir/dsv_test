@@ -1,6 +1,6 @@
 namespace MoviesApi.SharedKernel.Pagination;
 
-public class PaginatedResponse<T>
+public class PagedResponse<T>
 {
     public required IEnumerable<T> Items { get; init; }
     public required int TotalItems { get; init; }

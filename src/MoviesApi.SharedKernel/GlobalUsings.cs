@@ -1,6 +1,1 @@
-namespace MoviesApi.SharedKernel;
-
-public class GlobalUsings
-{
-    
-}
+global using MediatR;

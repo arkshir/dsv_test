@@ -1,6 +1,3 @@
 namespace MoviesApi.SharedKernel;
 
-public interface IQuery
-{
-    
-}
+public interface IQuery<out TResponse> : IRequest<TResponse>;

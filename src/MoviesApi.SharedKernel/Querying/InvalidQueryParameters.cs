@@ -1,6 +1,3 @@
 namespace MoviesApi.SharedKernel.Querying;
 
-public class InvalidQueryParameters
-{
-    
-}
+public record struct InvalidQueryParameters;

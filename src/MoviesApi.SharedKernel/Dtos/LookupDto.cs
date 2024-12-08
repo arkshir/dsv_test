@@ -1,6 +1,3 @@
 namespace MoviesApi.SharedKernel.Dtos;
 
-public class LookupDto
-{
-    
-}
+public record LookupDto(int Id, string Name);

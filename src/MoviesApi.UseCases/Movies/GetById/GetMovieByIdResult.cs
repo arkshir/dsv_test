@@ -1,6 +1,9 @@
+using MoviesApi.Core.MoviesAggregate;
+using MoviesApi.SharedKernel.Errors;
+
+using OneOf;
+
 namespace MoviesApi.UseCases.Movies.GetById;
 
-public class GetMovieByIdResult
-{
-    
-}
+[GenerateOneOf]
+public partial class GetMovieByIdResult : OneOfBase<MovieDetailsDto, EntityNotFound<Movie>>;

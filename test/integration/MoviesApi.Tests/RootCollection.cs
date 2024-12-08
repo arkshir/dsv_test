@@ -1,6 +1,7 @@
 namespace MoviesApi.Tests;
 
-public class RootCollection
+[CollectionDefinition(Name)]
+public class RootCollection : TestCollection<App>
 {
-    
+    public const string Name = "MoviesApi";
 }

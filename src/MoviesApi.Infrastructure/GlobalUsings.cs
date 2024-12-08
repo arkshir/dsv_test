@@ -1,6 +1,4 @@
-namespace MoviesApi.Infrastructure;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class GlobalUsings
-{
-    
-}
+global using MoviesApi.Core.MoviesAggregate;

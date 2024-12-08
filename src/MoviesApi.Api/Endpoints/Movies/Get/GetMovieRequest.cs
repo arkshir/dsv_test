@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MoviesApi.Api.Endpoints.Movies.Get;
 
-public class GetMovieEndpointRequest
+public class GetMovieRequest
 {
-    [Required] public int Id { get; set; }
+    [Required] public required int Id { get; set; }
 }

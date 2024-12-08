@@ -4,7 +4,7 @@ using MoviesApi.UseCases.Movies;
 
 namespace MoviesApi.Api.Endpoints.Movies.Get;
 
-public record GetMovieEndpointResponse(
+public record GetMovieResponse(
     MovieId Id,
     string ShowId,
     string Title,

@@ -1,6 +1,4 @@
 namespace MoviesApi.SharedKernel;
 
-public interface ICommandHandler
-{
-    
-}
+public interface ICommandHandler<in TCommand, TResponse> : IRequestHandler<TCommand, TResponse>
+    where TCommand : ICommand<TResponse>;

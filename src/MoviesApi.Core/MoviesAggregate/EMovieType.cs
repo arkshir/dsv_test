@@ -1,6 +1,9 @@
+using System.ComponentModel;
+
 namespace MoviesApi.Core.MoviesAggregate;
 
-public class MovieType
+public enum EMovieType
 {
-    
+    [Description("Movie")] Movie,
+    [Description("TV Show")] TvShow
 }
