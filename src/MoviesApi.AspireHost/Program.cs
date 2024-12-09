@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Hosting;
+
 using Projects;
 
 IDistributedApplicationBuilder? builder = DistributedApplication.CreateBuilder(args);
@@ -12,16 +14,16 @@ IResourceBuilder<SqlServerServerResource>? sql = builder
 
 IResourceBuilder<SqlServerDatabaseResource>? db = sql.AddDatabase("moviesdb");
 
-IResourceBuilder<ProjectResource>? apiService = builder.AddProject<MoviesApi_Api>("moviesapi")
+IResourceBuilder<ProjectResource> moviesApi = builder.AddProject<MoviesApi_Api>("moviesapi")
     .WithEnvironment("ASPNETCORE_ASPIRE", "1")
     .WithReference(db)
     .WaitFor(db);
 
-var frontend = builder.Add
-
-// builder.AddProject<Projects.MoviesApi_Web>("webfrontend")
-//     .WithExternalHttpEndpoints()
-//     .WithReference(apiService)
-//     .WaitFor(apiService);
+IResourceBuilder<NodeAppResource> moviesfrontend = builder.AddNpmApp("moviesfrontend", "../MoviesFrontend")
+    .WithReference(moviesApi)
+    .WaitFor(moviesApi)
+    .WithHttpEndpoint(port: 8000, targetPort: 4200, env: "PORT")
+    .WithExternalHttpEndpoints()
+    .PublishAsDockerFile();
 
 await builder.Build().RunAsync();

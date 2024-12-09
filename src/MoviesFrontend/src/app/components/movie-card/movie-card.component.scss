@@ -1,0 +1,14 @@
+.movie-card {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.movie-card__header {
+    height: 100px;
+}
+
+.movie-card__image {
+    height: 200px;
+    object-fit: cover;
+}

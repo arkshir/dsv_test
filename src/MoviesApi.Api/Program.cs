@@ -12,6 +12,14 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add core services
 builder.Services.AddUseCases();
 
+builder.Services.AddCors(o =>
+{
+    o.AddDefaultPolicy(p =>
+    {
+        p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 builder.Services.AddExceptionHandler<ValidationExceptionHandler>();
 
 string? isAspire = Environment.GetEnvironmentVariable("ASPNETCORE_ASPIRE");
@@ -43,6 +51,8 @@ WebApplication? app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
+
+app.UseCors();
 
 app.UseFastEndpoints();
 
