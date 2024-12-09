@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 		.editorconfig = .editorconfig
 		Directory.Build.Props = Directory.Build.Props
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Core", "src\MoviesApi.Core\MoviesApi.Core.csproj", "{64E4588E-DE66-45E2-A884-CB52985669E8}"
