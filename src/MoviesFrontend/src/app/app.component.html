@@ -2,7 +2,10 @@
   <article class="container">
     <mat-grid-list cols="4" gutterSize="1.5rem" rowHeight="300px">
       <mat-grid-tile *ngFor="let movie of movies"
-        ><app-movie-card style="width: 100%; height: 100%" [movie]="movie"
+        ><app-movie-card
+          style="width: 100%; height: 100%; cursor: pointer"
+          (click)="openDetailsDialog(movie.id ?? 0)"
+          [movie]="movie"
       /></mat-grid-tile>
     </mat-grid-list>
     <mat-paginator
