@@ -33,7 +33,7 @@ This mode starts the API in the context of .NET Aspire.
 
 (The SQL Server container might take a little while to spin up.)
 
-After every resource is in the running state, they can be acessed through the urls: 
+After all resources are running, they can be accessed via URLs:
 
 - [Api](https://localhost:7445/scalar/v1)
 - [Frontend](http://localhost:8000)
