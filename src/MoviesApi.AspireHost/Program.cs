@@ -2,7 +2,7 @@ using Projects;
 
 IDistributedApplicationBuilder? builder = DistributedApplication.CreateBuilder(args);
 
-IResourceBuilder<ParameterResource>? password = builder.AddParameter("MsSqlPassword", true);
+IResourceBuilder<ParameterResource> password = builder.AddParameter("MsSqlPassword", true);
 
 IResourceBuilder<SqlServerServerResource>? sql = builder
     .AddSqlServer("mssql", password)
@@ -16,6 +16,8 @@ IResourceBuilder<ProjectResource>? apiService = builder.AddProject<MoviesApi_Api
     .WithEnvironment("ASPNETCORE_ASPIRE", "1")
     .WithReference(db)
     .WaitFor(db);
+
+var frontend = builder.Add
 
 // builder.AddProject<Projects.MoviesApi_Web>("webfrontend")
 //     .WithExternalHttpEndpoints()
