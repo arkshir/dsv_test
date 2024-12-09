@@ -23,7 +23,7 @@
 
     <Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">
         <ItemGroup>
-            <PackageJsons Include="..\MoviesFrontend\package.json" />
+            <PackageJsons Include="..\*\package.json" />
         </ItemGroup>
 
         <!-- Install npm packages if node_modules is missing -->
